@@ -1,4 +1,4 @@
-package com.pharmeasy.keycloak.client.config;
+package com.sahilpaudel.keycloak.client.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@ConfigurationProperties(prefix = "com.pharmeasy.keycloak.client")
+@ConfigurationProperties(prefix = "com.sahilpaudel.keycloak.client")
 public class KeyCloakClientProperties {
     private String realm;
     private String clientId;
@@ -22,5 +22,5 @@ public class KeyCloakClientProperties {
     private int connectTimeout = 1000;
     private Duration cacheDurationInHours = Duration.ofHours(6);
     private List<String> exchangeFilterFunctionBeans = new ArrayList<>();
-    private String baseUrl = "https://staging-identityservice.dev.pharmeasy.in";
+    private String baseUrl = "https://staging.keycloak.com";
 }

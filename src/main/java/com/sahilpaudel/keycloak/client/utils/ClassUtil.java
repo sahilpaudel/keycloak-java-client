@@ -1,4 +1,4 @@
-package com.pharmeasy.keycloak.client.utils;
+package com.sahilpaudel.keycloak.client.utils;
 
 import java.util.Map;
 

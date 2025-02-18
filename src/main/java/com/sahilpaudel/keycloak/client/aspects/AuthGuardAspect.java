@@ -1,11 +1,11 @@
-package com.pharmeasy.keycloak.client.aspects;
+package com.sahilpaudel.keycloak.client.aspects;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pharmeasy.keycloak.client.annotations.*;
-import com.pharmeasy.keycloak.client.config.KeyCloakClientProperties;
-import com.pharmeasy.keycloak.client.dto.Role;
-import com.pharmeasy.keycloak.client.service.KeycloakClientService;
-import com.pharmeasy.keycloak.client.utils.ClassUtil;
+import com.sahilpaudel.keycloak.client.annotations.*;
+import com.sahilpaudel.keycloak.client.config.KeyCloakClientProperties;
+import com.sahilpaudel.keycloak.client.service.KeycloakClientService;
+import com.sahilpaudel.keycloak.client.utils.ClassUtil;
+import com.sahilpaudel.keycloak.client.dto.Role;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;

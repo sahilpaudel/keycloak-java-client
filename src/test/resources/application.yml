@@ -1,22 +1,22 @@
 logging:
   level:
     com:
-      pharmeasy:
+      sahilpaudel:
         keycloak: DEBUG
 server:
   port: 3001
 com:
-  pharmeasy:
+  sahilpaudel:
     keycloak:
       client:
-        auth-server-url: https://staging-identityservice.dev.pharmeasy.in/auth
-        base-url: https://staging-identityservice.dev.pharmeasy.in
+        auth-server-url: https://staging.keycloak.com/auth
+        base-url: https://staging.keycloak.com
         cache-duration-in-hours: 3h
-        client-id: helix-backend
-        client-secret: AZFX1GOGJq1XOOQGfxrHJAm0Y6eUwWZv
+        client-id: my-client
+        client-secret: my-client-secret
         connect-timeout: 1000
         read-timeout: 2000
-        realm: ThyroCare
+        realm: Hastinapur
 spring:
   jmx:
     enabled: false

@@ -14,7 +14,7 @@ scmVersion {
     useHighestVersion.set(true)
 }
 
-group = 'com.pharmeasy.keycloak'
+group = 'com.sahilpaudel.keycloak'
 project.version = scmVersion.version
 
 tasks.register('sourceJar', Jar) {

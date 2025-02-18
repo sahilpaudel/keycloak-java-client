@@ -1,11 +1,11 @@
-package com.pharmeasy.keycloak.client;
+package com.sahilpaudel.keycloak.client;
 
-import com.pharmeasy.keycloak.client.annotations.RoleGuard;
-import com.pharmeasy.keycloak.client.annotations.RoleMatching;
-import com.pharmeasy.keycloak.client.aspects.AuthGuardAspect;
-import com.pharmeasy.keycloak.client.config.KeyCloakClientProperties;
-import com.pharmeasy.keycloak.client.controller.TestController;
-import com.pharmeasy.keycloak.client.service.KeycloakClientService;
+import com.sahilpaudel.keycloak.client.annotations.RoleGuard;
+import com.sahilpaudel.keycloak.client.annotations.RoleMatching;
+import com.sahilpaudel.keycloak.client.aspects.AuthGuardAspect;
+import com.sahilpaudel.keycloak.client.config.KeyCloakClientProperties;
+import com.sahilpaudel.keycloak.client.controller.TestController;
+import com.sahilpaudel.keycloak.client.service.KeycloakClientService;
 import io.jsonwebtoken.*;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.CodeSignature;
@@ -49,9 +49,9 @@ public class MyTest {
     void init() {
 
         keyCloakClientProperties = new KeyCloakClientProperties();
-        keyCloakClientProperties.setRealm("ThyroCare");
+        keyCloakClientProperties.setRealm("Hastinapur");
 
-        Map<String, String> data = Map.of("realm", "ThyroCare", "public_key", "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVGUzbydMZS+fnkGTsUkDKEyFOGwghR234d5GjPnMIC0RFtXtw2tdcNM8I9Qk+h6fnPHiA7r27iHBfdxTP3oegQJWpbY2RMwSmOs02eQqpKx4QtIjWqkKk2Gmck5cll9GCoI8AUAA5e0D02T0ZgINDmo5yGPhGAAmqYrm8YiupwQIDAQAB");
+        Map<String, String> data = Map.of("realm", "Hastinapur", "public_key", "public-key");
         when(restTemplate.getForObject(Mockito.anyString(), Mockito.any()))
                 .thenAnswer(invocation -> ResponseEntity.ok(data));
         when(keycloakClientService.getRealmInfo(Mockito.anyString()))

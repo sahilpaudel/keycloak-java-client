@@ -1,4 +1,4 @@
-package com.pharmeasy.keycloak.client.annotations;
+package com.sahilpaudel.keycloak.client.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,7 +7,5 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface RoleGuard {
-    String[] roles();
-    RoleMatching mode() default RoleMatching.ANY;
+public @interface Public {
 }
