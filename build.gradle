@@ -1,35 +1,84 @@
 plugins {
     id 'java'
+    id 'signing'
+    id 'java-library'
+    id 'maven-publish'
+    id 'org.jreleaser' version '1.16.0'
     id 'net.linguica.maven-settings' version '0.5'
-    id 'pl.allegro.tech.build.axion-release' version '1.14.0'
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 apply plugin: 'maven-publish'
 apply plugin: 'net.linguica.maven-settings'
-apply plugin: 'pl.allegro.tech.build.axion-release'
 
 sourceCompatibility = 11
 
-scmVersion {
-    useHighestVersion.set(true)
-}
+version = getVersionFromTag()
 
-group = 'com.sahilpaudel.keycloak'
-project.version = scmVersion.version
-
-tasks.register('sourceJar', Jar) {
-    classifier 'sources'
-    from sourceSets.main.allJava
+def getVersionFromTag() {
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'describe', '--tags', '--always', '--match', '[0-9]*'
+        standardOutput = stdout
+        ignoreExitValue true
+    }
+    return stdout.toString().trim() ?: '0.0.1'
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId "java-client"
+            groupId = 'com.sahilpaudel'
+            artifactId "keycloak-java-client"
+
             from components.java
-            artifact tasks.sourceJar
+
+            pom {
+                name = 'keycloak-java-client'
+                description = 'Keycloak Java Client with Annotations'
+                url = 'https://github.com/sahilpaudel/keycloak-java-client'
+                inceptionYear = '2025'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'sahilpaudel'
+                        name = 'Sahil Paudel'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:https://github.com/sahilpaudel/keycloak-java-client.git'
+                    developerConnection = 'scm:git:ssh://github.com/sahilpaudel/keycloak-java-client.git'
+                    url = 'https://github.com/sahilpaudel/keycloak-java-client'
+                }
+            }
         }
     }
+    repositories {
+        maven {
+            url = layout.buildDirectory.dir('staging-deploy')
+        }
+//        maven {
+//            name = 'OSSRH'
+//            url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+//            credentials {
+//                username = project.findProperty('ossrhUsername') ?: ''
+//                password = project.findProperty('ossrhPassword') ?: ''
+//            }
+//        }
+    }
+}
+
+signing {
+    //sign publishing.publications.mavenJava
 }
 
 configurations {
@@ -45,22 +94,11 @@ configurations {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven {
-        url = 'https://repo.maven.apache.org/maven2'
-    }
 }
 
 ext {
     caffeineVersion = '2.8.1'
     springVersion = '2.5.2'
-}
-
-publishing {
-    repositories {
-        maven {
-
-        }
-    }
 }
 
 dependencies {
