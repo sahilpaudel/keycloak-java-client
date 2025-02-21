@@ -1,4 +1,4 @@
-package com.sahilpaudel.keycloak.client.annotations;
+package in.sahilpaudel.keycloak.client.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

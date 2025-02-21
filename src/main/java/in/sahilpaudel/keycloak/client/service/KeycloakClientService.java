@@ -1,9 +1,9 @@
-package com.sahilpaudel.keycloak.client.service;
+package in.sahilpaudel.keycloak.client.service;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
-import com.sahilpaudel.keycloak.client.utils.ClassUtil;
-import com.sahilpaudel.keycloak.client.config.KeyCloakClientProperties;
+import in.sahilpaudel.keycloak.client.utils.ClassUtil;
+import in.sahilpaudel.keycloak.client.config.KeyCloakClientProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

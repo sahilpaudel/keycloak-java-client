@@ -1,4 +1,4 @@
-package com.sahilpaudel.keycloak.client.config;
+package in.sahilpaudel.keycloak.client.config;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;

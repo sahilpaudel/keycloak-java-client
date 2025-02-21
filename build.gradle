@@ -32,7 +32,7 @@ def getVersionFromTag() {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.sahilpaudel'
+            groupId = 'in.sahilpaudel'
             artifactId "keycloak-java-client"
 
             from components.java

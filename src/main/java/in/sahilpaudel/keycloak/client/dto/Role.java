@@ -1,4 +1,4 @@
-package com.sahilpaudel.keycloak.client.dto;
+package in.sahilpaudel.keycloak.client.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

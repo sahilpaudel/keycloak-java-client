@@ -1,11 +1,13 @@
-package com.sahilpaudel.keycloak.client.annotations;
+package in.sahilpaudel.keycloak.client.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface AuthGuard {
+public @interface RoleGuard {
+    String[] roles();
+    RoleMatching mode() default RoleMatching.ANY;
 }

@@ -1,11 +1,11 @@
 package com.sahilpaudel.keycloak.client;
 
-import com.sahilpaudel.keycloak.client.annotations.RoleGuard;
-import com.sahilpaudel.keycloak.client.annotations.RoleMatching;
-import com.sahilpaudel.keycloak.client.aspects.AuthGuardAspect;
-import com.sahilpaudel.keycloak.client.config.KeyCloakClientProperties;
+import in.sahilpaudel.keycloak.client.annotations.RoleGuard;
+import in.sahilpaudel.keycloak.client.annotations.RoleMatching;
+import in.sahilpaudel.keycloak.client.aspects.AuthGuardAspect;
+import in.sahilpaudel.keycloak.client.config.KeyCloakClientProperties;
 import com.sahilpaudel.keycloak.client.controller.TestController;
-import com.sahilpaudel.keycloak.client.service.KeycloakClientService;
+import in.sahilpaudel.keycloak.client.service.KeycloakClientService;
 import io.jsonwebtoken.*;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.CodeSignature;
